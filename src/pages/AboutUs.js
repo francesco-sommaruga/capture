@@ -1,6 +1,6 @@
-import AboutSection from '../components/AboutSection';
-import ServicesSection from '../components/ServicesSection';
-import FaqSection from '../components/FaqSection';
+import AboutSection from '../components/sections/AboutSection';
+import ServicesSection from '../components/sections/ServicesSection';
+import FaqSection from '../components/sections/FaqSection';
 
 const AboutUs = () => {
     return (

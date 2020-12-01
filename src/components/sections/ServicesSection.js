@@ -1,15 +1,19 @@
 //import components
-import Card from './Card';
+import Card from '../components/Card';
+
+//import styled components
+import styled from 'styled-components';
+import { StyledLayout, StyledDescription, StyledImage } from '../styled-components/styles';
 
 //import icons
-import clock from '../img/clock.svg';
-import diaphragm from '../img/diaphragm.svg';
-import money from '../img/money.svg';
-import teamwork from '../img/teamwork.svg';
+import clock from '../../img/clock.svg';
+import diaphragm from '../../img/diaphragm.svg';
+import money from '../../img/money.svg';
+import teamwork from '../../img/teamwork.svg';
 
 //import images
 
-import home2 from '../img/home2.png';
+import home2 from '../../img/home2.png';
 
 const ServicesSection = () => {
     const cards = [
@@ -39,22 +43,37 @@ const ServicesSection = () => {
         }
     ];
     return (
-        <div className="services">
-            <div className="description">
+        <StyledServices>
+            <StyledDescription>
                 <h2>
                     High <span>quality</span> services
                 </h2>
-                <div className="cards">
+                <StyledCards>
                     {cards.map(card => (
                         <Card src={card.src} alt={card.alt} title={card.title} text={card.text} />
                     ))}
-                </div>
-            </div>
-            <div className="image">
+                </StyledCards>
+            </StyledDescription>
+            <StyledImage>
                 <img src={home2} alt="camera shooting" />
-            </div>
-        </div>
+            </StyledImage>
+        </StyledServices>
     );
 };
+
+const StyledServices = styled(StyledLayout)`
+    h2 {
+        padding-bottom: 5rem;
+    }
+    p {
+        width: 70%;
+        padding: 2rem 0rem 4rem 0rem;
+    }
+`;
+
+const StyledCards = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+`;
 
 export default ServicesSection;

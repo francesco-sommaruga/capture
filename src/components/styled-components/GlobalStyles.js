@@ -10,11 +10,12 @@ const GlobalStyle = createGlobalStyle`
 
 body{
     background:#1b1b1b;
+    font-family: 'Inter', sans-serif;
 }
 
 button{
     font-weight:bold;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor:pointer;
     padding: 1rem 2rem;
     border: 3px solid #23d997;
@@ -28,12 +29,13 @@ button{
 }
 h2{
     font-weight: lighter;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 h3{
     color: white;
 }
 h4{
+    font-size: 2rem;
     font-weight: bold;
 }
 a{
@@ -42,7 +44,7 @@ a{
 p{
     padding: 3rem 0rem;
     color: #cccccc;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height:150%;
 }
 span{
