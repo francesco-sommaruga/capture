@@ -55,7 +55,7 @@ const FaqSection = () => {
                 Any Questions <span>FAQ</span>
             </h2>
             {faqs.map(faq => (
-                <Faq question={faq.question} answer={faq.answer} />
+                <Faq question={faq.question} answer={faq.answer} key={faq.question}/>
             ))}
         </StyledFaqs>
     );

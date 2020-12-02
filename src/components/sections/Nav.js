@@ -9,13 +9,13 @@ const Nav = () => {
             </h1>
 
             <ul>
-                <li>
+                <li key={'nav-1'}>
                     <Link to="/">1. About Us</Link>
                 </li>
-                <li>
+                <li key={'nav-2'}>
                     <Link to="/work">2. Our Work</Link>
                 </li>
-                <li>
+                <li key={'nav-3'}>
                     <Link to="/contacts">3. Contact Us</Link>
                 </li>
             </ul>

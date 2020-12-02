@@ -7,6 +7,10 @@ import styled from 'styled-components';
 //import components
 import Award from '../components/components/Award';
 
+//import animations
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../framerAnimations';
+
 const MovieDetail = ({ movies }) => {
     const history = useHistory();
     const url = history.location.pathname;
@@ -20,14 +24,14 @@ const MovieDetail = ({ movies }) => {
     return (
         <>
             {movie && (
-                <StyledDetails>
+                <StyledDetails variants={pageAnimation}  initial="hidden" animate="show" exit="exit">
                     <StyledHeadline>
                         <h2>{movie.title}</h2>
                         <img src={movie.mainImg} alt={movie.title} />
                     </StyledHeadline>
                     <StyledAwards>
                         {movie.awards.map(award => (
-                            <Award title={award.title} description={award.description} />
+                            <Award title={award.title} description={award.description} key={award.title} />
                         ))}
                     </StyledAwards>
                     <StyledImage>
@@ -39,7 +43,7 @@ const MovieDetail = ({ movies }) => {
     );
 };
 
-const StyledDetails = styled.div`
+const StyledDetails = styled(motion.div)`
     color: white;
 `;
 
@@ -55,7 +59,7 @@ const StyledHeadline = styled.div`
     }
     img {
         width: 100%;
-        height: 70vh;
+        height: 90vh;
         object-fit: cover;
     }
 `;

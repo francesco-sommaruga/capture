@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 //import react-router
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 
 //import global styles
 import GlobalStyle from './components/styled-components/GlobalStyles';
@@ -19,27 +19,35 @@ import MovieDetail from './pages/MovieDetail';
 //import hard-coded movies
 import { MovieState } from './movieState';
 
+//framer-motion
+import { AnimatePresence } from 'framer-motion';
+
 const App = () => {
     const [movies, setMovies] = useState(MovieState);
+
+    const location = useLocation();
 
     return (
         <div className="App">
             <GlobalStyle />
             <Nav />
-            <Switch>
-                <Route path="/" exact>
-                    <AboutUs />
-                </Route>
-                <Route path="/contacts" exact>
-                    <ContactUs />
-                </Route>
-                <Route path="/work" exact>
-                    <OurWork movies={movies} />
-                </Route>
-                <Route path="/work/:id">
-                    <MovieDetail movies={movies} />
-                </Route>
-            </Switch>
+            <AnimatePresence exitBeforeEnter>
+                {/*location and key props are needed for AnimatePresence to trigger exit animations */}
+                <Switch location={location} key={location.pathname}>
+                    <Route path="/" exact>
+                        <AboutUs />
+                    </Route>
+                    <Route path="/contacts" exact>
+                        <ContactUs />
+                    </Route>
+                    <Route path="/work" exact>
+                        <OurWork movies={movies} />
+                    </Route>
+                    <Route path="/work/:id">
+                        <MovieDetail movies={movies} />
+                    </Route>
+                </Switch>
+            </AnimatePresence>
         </div>
     );
 };
