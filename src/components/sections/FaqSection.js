@@ -7,6 +7,8 @@ import { StyledLayout } from '../styled-components/styles';
 
 //animation
 import { AnimateSharedLayout } from 'framer-motion';
+import useScroll from '../../hooks/useScroll';
+import { scrollReveal } from '../../framerAnimations';
 
 const faqs = [
     {
@@ -52,8 +54,10 @@ const faqs = [
 ];
 
 const FaqSection = () => {
+    const [section, controls] = useScroll();
+
     return (
-        <StyledFaqs>
+        <StyledFaqs ref={section} variants={scrollReveal} animate={controls} initial={controls}>
             <h2>
                 Any Questions <span>FAQ</span>
             </h2>

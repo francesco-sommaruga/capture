@@ -6,7 +6,11 @@ import FaqSection from '../components/sections/FaqSection';
 import { motion } from 'framer-motion';
 import { pageAnimation } from '../framerAnimations';
 
+//scroll to top of page
+import useScrollToTop from './../hooks/useScrollToTop';
+
 const AboutUs = () => {
+    useScrollToTop();
     return (
         <motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <AboutSection />

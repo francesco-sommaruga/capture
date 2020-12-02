@@ -6,11 +6,14 @@ import styled from 'styled-components';
 
 //import animations
 import { motion } from 'framer-motion';
-import { fade, photoAnimation, lineAnimation } from '../../framerAnimations';
+import { fade, photoAnimation, lineAnimation, onlyStagger } from '../../framerAnimations';
+import useScroll from '../../hooks/useScroll';
 
 const Movie = ({ title, src, alt, link }) => {
+    const [element, controls] = useScroll();
+
     return (
-        <StyledMovie>
+        <StyledMovie ref={element} variants={onlyStagger} animate={controls} initial={controls}>
             <motion.h2 variants={fade}>{title}</motion.h2>
             <motion.div variants={lineAnimation} className="line"></motion.div>
             <Link to={link}>
@@ -22,7 +25,7 @@ const Movie = ({ title, src, alt, link }) => {
     );
 };
 
-const StyledMovie = styled.div`
+const StyledMovie = styled(motion.div)`
     padding-bottom: 10rem;
     h2 {
         padding: 1rem 0;

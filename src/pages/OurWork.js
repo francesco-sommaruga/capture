@@ -8,7 +8,11 @@ import Movie from '../components/components/Movie';
 import { motion } from 'framer-motion';
 import { pageAnimation, rainbowAnimation } from '../framerAnimations';
 
+//scroll to top of page
+import useScrollToTop from './../hooks/useScrollToTop';
+
 const OurWork = ({ movies }) => {
+    useScrollToTop();
     return (
         <StyledWork variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <Frame1 variants={rainbowAnimation} />

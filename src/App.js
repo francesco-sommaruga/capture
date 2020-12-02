@@ -9,7 +9,6 @@ import GlobalStyle from './components/styled-components/GlobalStyles';
 
 //import components
 import Nav from './components/sections/Nav';
-import ScrollToTop from './components/components/ScrollToTop';
 
 //import pages
 import AboutUs from './pages/AboutUs';
@@ -32,7 +31,6 @@ const App = () => {
         <div className="App">
             <GlobalStyle />
             <Nav />
-            <ScrollToTop />
             <AnimatePresence exitBeforeEnter>
                 {/*location and key props are needed for AnimatePresence to trigger exit animations */}
                 <Switch location={location} key={location.pathname}>

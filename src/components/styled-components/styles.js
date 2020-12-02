@@ -1,8 +1,10 @@
 //import styled components
 import styled from 'styled-components';
+//import framer-motion
+import { motion } from 'framer-motion';
 
 //styled components
-export const StyledLayout = styled.div`
+export const StyledLayout = styled(motion.div)`
     min-height: 90vh;
     display: flex;
     align-items: center;

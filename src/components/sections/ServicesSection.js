@@ -12,38 +12,44 @@ import money from '../../img/money.svg';
 import teamwork from '../../img/teamwork.svg';
 
 //import images
-
 import home2 from '../../img/home2.png';
 
+//animations
+import useScroll from '../../hooks/useScroll';
+import { scrollReveal } from '../../framerAnimations';
+
+const cards = [
+    {
+        src: clock,
+        alt: 'a clock',
+        title: 'Efficiency',
+        text: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+        src: teamwork,
+        alt: 'teamwork',
+        title: 'Teamwork',
+        text: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+        src: diaphragm,
+        alt: 'diaphragm',
+        title: 'Diaphragm',
+        text: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+        src: money,
+        alt: 'money',
+        title: 'Affordable',
+        text: 'Lorem ipsum dolor sit amet.',
+    },
+];
+
 const ServicesSection = () => {
-    const cards = [
-        {
-            src: clock,
-            alt: 'a clock',
-            title: 'Efficiency',
-            text: 'Lorem ipsum dolor sit amet.'
-        },
-        {
-            src: teamwork,
-            alt: 'teamwork',
-            title: 'Teamwork',
-            text: 'Lorem ipsum dolor sit amet.'
-        },
-        {
-            src: diaphragm,
-            alt: 'diaphragm',
-            title: 'Diaphragm',
-            text: 'Lorem ipsum dolor sit amet.'
-        },
-        {
-            src: money,
-            alt: 'money',
-            title: 'Affordable',
-            text: 'Lorem ipsum dolor sit amet.'
-        }
-    ];
+    const [section, controls] = useScroll();
+
     return (
-        <StyledServices>
+        <StyledServices ref={section} variants={scrollReveal} animate={controls} initial={controls}>
             <StyledDescription>
                 <h2>
                     High <span>quality</span> services

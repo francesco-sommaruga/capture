@@ -11,6 +11,9 @@ import Award from '../components/components/Award';
 import { motion } from 'framer-motion';
 import { pageAnimation } from '../framerAnimations';
 
+//scroll to top of page
+import useScrollToTop from './../hooks/useScrollToTop';
+
 const MovieDetail = ({ movies }) => {
     const history = useHistory();
     const url = history.location.pathname;
@@ -21,10 +24,12 @@ const MovieDetail = ({ movies }) => {
         setMovie(currentMovie[0]);
     }, [movies, url]);
 
+    useScrollToTop();
+
     return (
         <>
             {movie && (
-                <StyledDetails variants={pageAnimation}  initial="hidden" animate="show" exit="exit">
+                <StyledDetails variants={pageAnimation} initial="hidden" animate="show" exit="exit">
                     <StyledHeadline>
                         <h2>{movie.title}</h2>
                         <img src={movie.mainImg} alt={movie.title} />
