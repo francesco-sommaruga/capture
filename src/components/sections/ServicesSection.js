@@ -80,6 +80,9 @@ const StyledServices = styled(StyledLayout)`
 const StyledCards = styled.div`
     display: flex;
     flex-wrap: wrap;
+    @media screen and (max-width: 1300px) {
+        justify-content: center;
+    }
 `;
 
 export default ServicesSection;

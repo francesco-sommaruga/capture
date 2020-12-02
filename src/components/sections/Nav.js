@@ -33,7 +33,7 @@ const StyledNav = styled.nav`
     background-color: #282828;
     position: sticky;
     top: 0;
-    z-index:100;
+    z-index: 100;
     a {
         color: white;
         text-decoration: none;
@@ -50,6 +50,21 @@ const StyledNav = styled.nav`
         font-size: 1.5rem;
         font-family: 'lobster', cursive;
         font-weight: lighter;
+    }
+    @media screen and (max-width: 1300px) {
+        flex-direction: column;
+        padding: 1rem;
+        ul {
+            padding: 2rem;
+            justify-content: space-around;
+            width: 100%;
+            li {
+                padding: 0;
+            }
+        }
+        h1 a {
+            padding: 5rem;
+        }
     }
 `;
 

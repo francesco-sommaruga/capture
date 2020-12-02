@@ -13,6 +13,12 @@ body{
     font-family: 'Inter', sans-serif;
 }
 
+html{
+    @media screen and (max-width: 1400px) {
+        font-size: 80%;
+    }
+}
+
 button{
     font-weight:bold;
     font-size: 1rem;

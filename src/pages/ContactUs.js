@@ -51,6 +51,15 @@ const StyledContacts = styled(motion.div)`
     .hide {
         overflow: hidden;
     }
+    @media screen and (max-width: 1300px) {
+        padding: 2rem;
+        h2{
+                font-size: 2rem;
+            }
+        .title{
+            margin-top: 5rem;
+        }
+    }
 `;
 
 const Circle = styled.div`

@@ -11,6 +11,11 @@ export const StyledLayout = styled(motion.div)`
     justify-content: space-between;
     padding: 5rem 10rem;
     color: white;
+    @media screen and (max-width: 1300px) {
+        display: block;
+        padding: 2rem;
+        text-align: center;
+    }
 `;
 export const StyledDescription = styled.div`
     flex: 1;
@@ -20,6 +25,13 @@ export const StyledDescription = styled.div`
     }
     .hide {
         overflow: hidden;
+    }
+    @media screen and (max-width: 1300px) {
+        display: block;
+        padding: 0;
+        button{
+            margin: 2rem 0 5rem 0;
+        }
     }
 `;
 export const StyledImage = styled.div`
