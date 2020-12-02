@@ -3,20 +3,23 @@ import useToggle from '../../hooks/useToggle';
 //import styled components
 import styled from 'styled-components';
 
+//animations
+import { motion } from 'framer-motion';
+
 const Faq = ({ question, answer }) => {
     const [toggle, handleToggle] = useToggle(false);
     return (
-        <StyledFaq>
-            <div className="question" onClick={handleToggle}>
+        <StyledFaq layout>
+            <motion.div layout className="question" onClick={handleToggle}>
                 <h4>{question}</h4>
-            </div>
+            </motion.div>
             <div className="answer">{toggle && <p>{answer}</p>}</div>
             <div className="faq-line"></div>
         </StyledFaq>
     );
 };
 
-const StyledFaq = styled.div`
+const StyledFaq = styled(motion.div)`
     .faq-line {
         background: #ccc;
         height: 0.2rem;

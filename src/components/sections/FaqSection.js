@@ -5,6 +5,9 @@ import Faq from '../components/Faq';
 import styled from 'styled-components';
 import { StyledLayout } from '../styled-components/styles';
 
+//animation
+import { AnimateSharedLayout } from 'framer-motion';
+
 const faqs = [
     {
         question: 'How do i start?',
@@ -54,9 +57,11 @@ const FaqSection = () => {
             <h2>
                 Any Questions <span>FAQ</span>
             </h2>
-            {faqs.map(faq => (
-                <Faq question={faq.question} answer={faq.answer} key={faq.question} />
-            ))}
+            <AnimateSharedLayout>
+                {faqs.map(faq => (
+                    <Faq question={faq.question} answer={faq.answer} key={faq.question} />
+                ))}
+            </AnimateSharedLayout>
         </StyledFaqs>
     );
 };
