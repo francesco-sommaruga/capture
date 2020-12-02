@@ -4,13 +4,19 @@ import { Link } from 'react-router-dom';
 //import styled components
 import styled from 'styled-components';
 
+//import animations
+import { motion } from 'framer-motion';
+import { fade, photoAnimation, lineAnimation } from '../../framerAnimations';
+
 const Movie = ({ title, src, alt, link }) => {
     return (
         <StyledMovie>
-            <h2>{title}</h2>
-            <div className="line"></div>
+            <motion.h2 variants={fade}>{title}</motion.h2>
+            <motion.div variants={lineAnimation} className="line"></motion.div>
             <Link to={link}>
-                <img src={src} alt={alt} />
+                <div className="hide">
+                    <motion.img variants={photoAnimation} src={src} alt={alt} />
+                </div>
             </Link>
         </StyledMovie>
     );
@@ -23,8 +29,11 @@ const StyledMovie = styled.div`
     }
     .line {
         height: 0.5rem;
-        background: #ccc;
+        background: #23d997;
         margin-bottom: 3rem;
+    }
+    .hide {
+        overflow: hidden;
     }
     img {
         width: 100%;
