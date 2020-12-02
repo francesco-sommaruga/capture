@@ -14,7 +14,7 @@ const faqs = [
                 <br />
                 <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, cum!
             </>
-        )
+        ),
     },
     {
         question: 'Daily Schedule',
@@ -24,7 +24,7 @@ const faqs = [
                 <br />
                 <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, cum!
             </>
-        )
+        ),
     },
     {
         question: 'Different Payment Methods',
@@ -34,7 +34,7 @@ const faqs = [
                 <br />
                 <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, cum!
             </>
-        )
+        ),
     },
     {
         question: 'What Products Do You Offer?',
@@ -44,8 +44,8 @@ const faqs = [
                 <br />
                 <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, cum!
             </>
-        )
-    }
+        ),
+    },
 ];
 
 const FaqSection = () => {
@@ -55,7 +55,7 @@ const FaqSection = () => {
                 Any Questions <span>FAQ</span>
             </h2>
             {faqs.map(faq => (
-                <Faq question={faq.question} answer={faq.answer} key={faq.question}/>
+                <Faq question={faq.question} answer={faq.answer} key={faq.question} />
             ))}
         </StyledFaqs>
     );
